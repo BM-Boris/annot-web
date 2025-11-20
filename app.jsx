@@ -627,7 +627,7 @@ function App() {
               ANNOT
             </Typography>
             <Typography variant="subtitle1" sx={{ color: "text.secondary", mt: 0.5 }}>
-              The art of aligning — in one flow.
+              The art of aligning — in one flow
             </Typography>
           </Box>
 
