@@ -775,7 +775,7 @@ function App() {
       color="secondary"
       component="a"
       href={downloadUrl}
-      download
+      download="annot.csv"
     >
       Download CSV
     </Button>
