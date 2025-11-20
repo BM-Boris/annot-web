@@ -749,9 +749,6 @@ function App() {
 
 {logs && (
   <Box mt={3}>
-    <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-      Log
-    </Typography>
     <Box
       component="pre"
       sx={{
