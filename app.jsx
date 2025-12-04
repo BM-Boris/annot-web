@@ -34,15 +34,54 @@ const { useState, useEffect, useRef, useMemo } = React;
 function LightIcon(props) {
   return (
     <SvgIcon {...props}>
-     <path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="#ff8c82"></path> <path fillRule="evenodd" clipRule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z" fill="#ff8c82"></path> <g opacity="0.5"> <path d="M3.66919 3.7156C3.94869 3.4099 4.42309 3.38867 4.72879 3.66817L6.95081 5.69975C7.25651 5.97925 7.27774 6.45365 6.99824 6.75935C6.71874 7.06505 6.24434 7.08629 5.93865 6.80679L3.71663 4.7752C3.41093 4.4957 3.38969 4.0213 3.66919 3.7156Z" fill="#ff8c82"></path> <path d="M20.3319 3.7156C20.6114 4.0213 20.5902 4.4957 20.2845 4.7752L18.0624 6.80679C17.7567 7.08629 17.2823 7.06505 17.0028 6.75935C16.7233 6.45365 16.7446 5.97925 17.0503 5.69975L19.2723 3.66817C19.578 3.38867 20.0524 3.4099 20.3319 3.7156Z" fill="#ff8c82"></path> <path d="M17.0261 17.0247C17.319 16.7318 17.7938 16.7319 18.0867 17.0248L20.3087 19.2471C20.6016 19.54 20.6016 20.0148 20.3087 20.3077C20.0158 20.6006 19.5409 20.6006 19.248 20.3076L17.026 18.0854C16.7331 17.7924 16.7332 17.3176 17.0261 17.0247Z" fill="#ff8c82"></path> <path d="M6.97521 17.0249C7.2681 17.3177 7.2681 17.7926 6.97521 18.0855L4.75299 20.3077C4.46009 20.6006 3.98522 20.6006 3.69233 20.3077C3.39943 20.0148 3.39943 19.54 3.69233 19.2471L5.91455 17.0248C6.20744 16.732 6.68232 16.732 6.97521 17.0249Z" fill="#ff8c82"></path> </g> 
-     </SvgIcon>);
+      <path
+        d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+        fill="#ff8c82"
+      ></path>{" "}
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z"
+        fill="#ff8c82"
+      ></path>{" "}
+      <g opacity="0.5">
+        {" "}
+        <path
+          d="M3.66919 3.7156C3.94869 3.4099 4.42309 3.38867 4.72879 3.66817L6.95081 5.69975C7.25651 5.97925 7.27774 6.45365 6.99824 6.75935C6.71874 7.06505 6.24434 7.08629 5.93865 6.80679L3.71663 4.7752C3.41093 4.4957 3.38969 4.0213 3.66919 3.7156Z"
+          fill="#ff8c82"
+        ></path>{" "}
+        <path
+          d="M20.3319 3.7156C20.6114 4.0213 20.5902 4.4957 20.2845 4.7752L18.0624 6.80679C17.7567 7.08629 17.2823 7.06505 17.0028 6.75935C16.7233 6.45365 16.7446 5.97925 17.0503 5.69975L19.2723 3.66817C19.578 3.38867 20.0524 3.4099 20.3319 3.7156Z"
+          fill="#ff8c82"
+        ></path>{" "}
+        <path
+          d="M17.0261 17.0247C17.319 16.7318 17.7938 16.7319 18.0867 17.0248L20.3087 19.2471C20.6016 19.54 20.6016 20.0148 20.3087 20.3077C20.0158 20.6006 19.5409 20.6006 19.248 20.3076L17.026 18.0854C16.7331 17.7924 16.7332 17.3176 17.0261 17.0247Z"
+          fill="#ff8c82"
+        ></path>{" "}
+        <path
+          d="M6.97521 17.0249C7.2681 17.3177 7.2681 17.7926 6.97521 18.0855L4.75299 20.3077C4.46009 20.6006 3.98522 20.6006 3.69233 20.3077C3.39943 20.0148 3.39943 19.54 3.69233 19.2471L5.91455 17.0248C6.20744 16.732 6.68232 16.732 6.97521 17.0249Z"
+          fill="#ff8c82"
+        ></path>{" "}
+      </g>
+    </SvgIcon>
+  );
 }
 
 function DarkIcon(props) {
   return (
     <SvgIcon {...props}>
-      <path opacity="0.5" fillRule="evenodd" clipRule="evenodd" d="M22 12.0004C22 17.5232 17.5228 22.0004 12 22.0004C10.8358 22.0004 9.71801 21.8014 8.67887 21.4357C8.24138 20.3772 8 19.217 8 18.0004C8 15.7792 8.80467 13.7459 10.1384 12.1762C11.31 13.8818 13.2744 15.0004 15.5 15.0004C17.8615 15.0004 19.9289 13.741 21.0672 11.8572C21.3065 11.4612 22 11.5377 22 12.0004Z" fill="#1C274C"/>
-<path d="M2 12C2 16.3586 4.78852 20.0659 8.67887 21.4353C8.24138 20.3768 8 19.2166 8 18C8 15.7788 8.80467 13.7455 10.1384 12.1758C9.42027 11.1303 9 9.86422 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12Z" fill="#1C274C"/>    </SvgIcon>
+      <path
+        opacity="0.5"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M22 12.0004C22 17.5232 17.5228 22.0004 12 22.0004C10.8358 22.0004 9.71801 21.8014 8.67887 21.4357C8.24138 20.3772 8 19.217 8 18.0004C8 15.7792 8.80467 13.7459 10.1384 12.1762C11.31 13.8818 13.2744 15.0004 15.5 15.0004C17.8615 15.0004 19.9289 13.741 21.0672 11.8572C21.3065 11.4612 22 11.5377 22 12.0004Z"
+        fill="#1C274C"
+      />
+      <path
+        d="M2 12C2 16.3586 4.78852 20.0659 8.67887 21.4353C8.24138 20.3768 8 19.2166 8 18C8 15.7788 8.80467 13.7455 10.1384 12.1758C9.42027 11.1303 9 9.86422 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12Z"
+        fill="#1C274C"
+      />
+    </SvgIcon>
   );
 }
 
@@ -113,15 +152,11 @@ const baseTheme = (mode) =>
       MuiTextField: {
         defaultProps: {
           size: "medium",
-
         },
       },
       MuiFormControl: {
         defaultProps: {
           size: "medium",
-
-        
-
         },
       },
       MuiSelect: {
@@ -153,11 +188,27 @@ function friendlySep(sep) {
   return "auto";
 }
 
+function normalizeName(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
 function guessColumn(columns, candidates) {
-  for (const target of candidates) {
-    const match = columns.find((c) => c.toLowerCase() === target.toLowerCase());
-    if (match) return match;
+  if (!columns || !columns.length) return "";
+  const normalized = columns.map((c) => normalizeName(c));
+  const normalizedCandidates = candidates.map((t) => normalizeName(t));
+
+  // exact normalized match
+  for (const cand of normalizedCandidates) {
+    const idx = normalized.findIndex((c) => c === cand);
+    if (idx !== -1) return columns[idx];
   }
+
+  // substring match
+  for (const cand of normalizedCandidates) {
+    const idx = normalized.findIndex((c) => c.includes(cand));
+    if (idx !== -1) return columns[idx];
+  }
+
   return columns[0] || "";
 }
 
@@ -228,6 +279,8 @@ function Settings({
 }) {
   const isLC = mode === "lc";
   const isGC = mode === "gc";
+  const adductsDisabled = !isLC || lib !== "hmdb";
+
   return (
     <Stack spacing={2}>
       <Stack
@@ -269,7 +322,7 @@ function Settings({
           </FormControl>
         </Grid>
         <Grid item xs={6} sm={6}>
-          <FormControl fullWidth disabled={!hasFile}>
+          <FormControl fullWidth disabled={!hasFile || (isLC && lib === "hmdb")}>
             <InputLabel>RT column</InputLabel>
             <Select
               value={rtCol}
@@ -338,7 +391,6 @@ function Settings({
             label="m/z tolerance"
             value={mzDiff}
             onChange={(e) => setMzDiff(e.target.value)}
-            helperText="Relative tolerance (e.g., 5e-6)"
           />
         </Grid>
         <Grid item xs={6} sm={6}>
@@ -347,7 +399,6 @@ function Settings({
             label="RT tolerance"
             value={timeDiff}
             onChange={(e) => setTimeDiff(e.target.value)}
-            helperText="Relative RT tolerance"
             disabled={isLC && lib === "hmdb"}
           />
         </Grid>
@@ -395,9 +446,9 @@ function Settings({
                 label={adduct}
                 color={active ? "primary" : "default"}
                 variant={active ? "filled" : "outlined"}
-                disabled={!isLC}
+                disabled={adductsDisabled}
                 onClick={() => {
-                  if (!isLC) return;
+                  if (adductsDisabled) return;
                   if (active) {
                     setAdducts(adducts.filter((a) => a !== adduct));
                   } else {
@@ -448,7 +499,10 @@ function PreviewTable({ columns, rows }) {
               {columns.map((col) => (
                 <TableCell
                   key={col}
-                  sx={{ borderBottom: "1px solid rgba(255,255,255,0.04)", color: "text.secondary" }}
+                  sx={{
+                    borderBottom: "1px solid rgba(255,255,255,0.04)",
+                    color: "text.secondary",
+                  }}
                 >
                   {row[col] === null || row[col] === undefined ? "" : String(row[col])}
                 </TableCell>
@@ -472,7 +526,7 @@ function App() {
   const [ionMode, setIonMode] = useState("pos");
   const [mzCol, setMzCol] = useState("");
   const [rtCol, setRtCol] = useState("");
-  const [mzDiff, setMzDiff] = useState("0.000005");
+  const [mzDiff, setMzDiff] = useState("5e-6");
   const [timeDiff, setTimeDiff] = useState("0.05");
   const [shift, setShift] = useState("auto");
   const [timeRange, setTimeRange] = useState("2.0");
@@ -485,7 +539,7 @@ function App() {
   const [rowCount, setRowCount] = useState(0);
   const [downloadUrl, setDownloadUrl] = useState("");
   const [modeTheme, setModeTheme] = useState("light");
-  const [logs, setLogs] = useState("");  
+  const [logs, setLogs] = useState("");
 
   const fileInputRef = useRef(null);
   const theme = useMemo(() => baseTheme(modeTheme), [modeTheme]);
@@ -496,8 +550,29 @@ function App() {
 
   useEffect(() => {
     if (columns.length) {
-      setMzCol((prev) => prev || guessColumn(columns, ["mz", "m/z"]));
-      setRtCol((prev) => prev || guessColumn(columns, ["rt", "retention_time"]));
+      setMzCol((prev) =>
+        prev ||
+        guessColumn(columns, [
+          "mz",
+          "m/z",
+          "mass",
+          "mass_to_charge",
+          "mass-to-charge",
+          "precursor_mz",
+        ])
+      );
+      setRtCol((prev) =>
+        prev ||
+        guessColumn(columns, [
+          "rt",
+          "r/t",
+          "retention_time",
+          "retention time",
+          "time",
+          "rt_min",
+          "rt_sec",
+        ])
+      );
     }
   }, [columns]);
 
@@ -515,7 +590,7 @@ function App() {
       const text = await readChunk(selectedFile);
       const sep = detectSeparator(text);
       const cols = parseHeader(text, sep);
-      if (!cols.length) throw new Error("Не удалось прочитать заголовок файла.");
+      if (!cols.length) throw new Error("Could not read header row.");
       setColumns(cols);
       setDetectedSep(sep);
     } catch (err) {
@@ -539,7 +614,11 @@ function App() {
     fd.append("file", file);
     fd.append("mode", mode);
     fd.append("mz_col", mzCol);
-    fd.append("rt_col", rtCol);
+    if (mode === "lc" && lib === "hmdb") {
+      fd.append("rt_col", "");
+    } else {
+      fd.append("rt_col", rtCol);
+    }
 
     // separator:
     //  - если пользователь выбрал , ; \t |  → отправляем
@@ -592,7 +671,6 @@ function App() {
     }
   };
 
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -607,15 +685,17 @@ function App() {
           <Box sx={{ position: "relative", textAlign: "center", mb: 3.5 }}>
             <IconButton
               onClick={() => setModeTheme((m) => (m === "dark" ? "light" : "dark"))}
-              sx={{ position: "absolute", left: -5,
-                 top: { xs: -20, sm: 8 },
-                 p: 1.25,
+              sx={{
+                position: "absolute",
+                left: -5,
+                top: { xs: -20, sm: 8 },
+                p: 1.25,
                 "& .MuiSvgIcon-root": {
-      fontSize: { xs: 31, sm: 45 }},
+                  fontSize: { xs: 31, sm: 45 },
+                },
               }}
               color="inherit"
               aria-label="toggle theme"
-              
             >
               {modeTheme === "dark" ? <LightIcon /> : <DarkIcon />}
             </IconButton>
@@ -633,50 +713,43 @@ function App() {
 
           <Stack spacing={2}>
             <Paper sx={{ p: 3, maxWidth: 900, mx: "auto" }}>
-  <Stack spacing={1.2}>
-    {/* шапка: кнопка строго напротив "Feature file" */}
-    <Stack spacing={0.5}>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Typography variant="h5" fontWeight={700}>
-          Feature file
-        </Typography>
+              <Stack spacing={1.2}>
+                {/* шапка: кнопка строго напротив "Feature file" */}
+                <Stack direction="row" justifyContent="space-between" alignItems="center">
+                  <Typography variant="h5" fontWeight={700}>
+                    Feature file
+                  </Typography>
 
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => fileInputRef.current?.click()}
-        >
-          Upload
-        </Button>
-      </Stack>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    Upload
+                  </Button>
+                </Stack>
 
-      <Typography variant="body2" color="text.secondary">
-        Expected columns:       
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-        mz (required), rt for LC RT-aware or GC.
-      </Typography>
-    </Stack>
+                <Typography variant="body2" color="text.secondary">
+                  Expected columns:
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  mz (required), rt for LC RT-aware or GC.
+                </Typography>
+              </Stack>
 
-    <input
-      ref={fileInputRef}
-      type="file"
-      accept=".csv,.tsv,.txt"
-      id="hidden-file-input"
-      hidden
-      onChange={(e) => handleFile(e.target.files?.[0])}
-    />
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".csv,.tsv,.txt"
+                id="hidden-file-input"
+                hidden
+                onChange={(e) => handleFile(e.target.files?.[0])}
+              />
 
-    <Typography variant="body2" color="text.secondary">
-      {fileName}
-    </Typography>
-  </Stack>
-</Paper>
-
+              <Typography variant="body2" color="text.secondary">
+                {fileName}
+              </Typography>
+            </Paper>
 
             <Paper sx={{ p: 3, maxWidth: 900, mx: "auto" }}>
               <Settings
@@ -742,46 +815,45 @@ function App() {
                 </Alert>
               )}
               {previewCols.length > 0 && (
-  <Box mt={3}>
-    <PreviewTable columns={previewCols} rows={previewRows} />
-  </Box>
-)}
+                <Box mt={3}>
+                  <PreviewTable columns={previewCols} rows={previewRows} />
+                </Box>
+              )}
 
-{logs && (
-  <Box mt={3}>
-    <Box
-      component="pre"
-      sx={{
-        p: 1.5,
-        borderRadius: 2,
-        border: "1px solid rgba(255,255,255,0.12)",
-        maxHeight: 220,
-        overflow: "auto",
-        fontSize: 12,
-        fontFamily:
-          "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-        whiteSpace: "pre-wrap",
-      }}
-    >
-      {logs}
-    </Box>
-  </Box>
-)}
+              {logs && (
+                <Box mt={3}>
+                  <Box
+                    component="pre"
+                    sx={{
+                      p: 1.5,
+                      borderRadius: 2,
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      maxHeight: 220,
+                      overflow: "auto",
+                      fontSize: 12,
+                      fontFamily:
+                        "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+                      whiteSpace: "pre-wrap",
+                    }}
+                  >
+                    {logs}
+                  </Box>
+                </Box>
+              )}
 
-{downloadUrl && (
-  <Box mt={2} display="flex" justifyContent="flex-end">
-    <Button
-      variant="outlined"
-      color="secondary"
-      component="a"
-      href={downloadUrl}
-      download="annot.csv"
-    >
-      Download CSV
-    </Button>
-  </Box>
-)}
-
+              {downloadUrl && (
+                <Box mt={2} display="flex" justifyContent="flex-end">
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    component="a"
+                    href={downloadUrl}
+                    download="annot.csv"
+                  >
+                    Download CSV
+                  </Button>
+                </Box>
+              )}
             </Paper>
           </Stack>
         </Container>
