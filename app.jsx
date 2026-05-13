@@ -169,7 +169,7 @@ const baseTheme = (mode) =>
 
 const defaultAdducts = {
   pos: ["[M+H]+", "[M+Na]+", "[M+NH4]+", "[M+K]+"],
-  neg: ["[M-H]-", "[M+Cl]-"],
+  neg: ["[M-H]-", "[M-2H]2-", "[M+Cl]-"],
 };
 const allAdducts = [
   "[M+H]+",
@@ -177,6 +177,7 @@ const allAdducts = [
   "[M+NH4]+",
   "[M+K]+",
   "[M-H]-",
+  "[M-2H]2-",
   "[M+Cl]-",
 ];
 
@@ -279,7 +280,8 @@ function Settings({
 }) {
   const isLC = mode === "lc";
   const isGC = mode === "gc";
-  const adductsDisabled = !isLC || lib !== "hmdb";
+  const isMassOnlyLC = isLC && (lib === "hmdb" || lib === "t3db");
+  const adductsDisabled = !isMassOnlyLC;
 
   return (
     <Stack spacing={2}>
@@ -322,7 +324,7 @@ function Settings({
           </FormControl>
         </Grid>
         <Grid item xs={6} sm={6}>
-          <FormControl fullWidth disabled={!hasFile || (isLC && lib === "hmdb")}>
+          <FormControl fullWidth disabled={!hasFile || isMassOnlyLC}>
             <InputLabel>RT column</InputLabel>
             <Select
               value={rtCol}
@@ -367,6 +369,7 @@ function Settings({
               onChange={(e) => setLib(e.target.value)}
             >
               <MenuItem value="hmdb">HMDB (m/z)</MenuItem>
+              <MenuItem value="t3db">T3DB (m/z)</MenuItem>
               <MenuItem value="annot">Annot (m/z + RT)</MenuItem>
             </Select>
           </FormControl>
@@ -399,7 +402,7 @@ function Settings({
             label="RT tolerance"
             value={timeDiff}
             onChange={(e) => setTimeDiff(e.target.value)}
-            disabled={isLC && lib === "hmdb"}
+            disabled={isMassOnlyLC}
           />
         </Grid>
         <Grid item xs={6} sm={6}>
@@ -409,7 +412,7 @@ function Settings({
             value={shift}
             onChange={(e) => setShift(e.target.value)}
             helperText="Use 'auto' or numeric"
-            disabled={isLC && lib === "hmdb"}
+            disabled={isMassOnlyLC}
           />
         </Grid>
 
@@ -614,7 +617,7 @@ function App() {
     fd.append("file", file);
     fd.append("mode", mode);
     fd.append("mz_col", mzCol);
-    if (mode === "lc" && lib === "hmdb") {
+    if (mode === "lc" && (lib === "hmdb" || lib === "t3db")) {
       fd.append("rt_col", "");
     } else {
       fd.append("rt_col", rtCol);
