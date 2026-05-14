@@ -558,7 +558,7 @@ function GuidePage() {
             Guide
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            ANNOT takes a feature table from LC-MS or GC-MS and adds candidate compound annotations. 
+            <b>ANNOT</b> takes a feature table from LC-MS or GC-MS and adds candidate compound annotations. 
             It gives the best hit and a candidate list, helping users decide what to confirm with retention time, fragmentation data, standards, or biological context.
           </Typography>
         </Stack>
@@ -616,13 +616,13 @@ function GuidePage() {
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <TableCell>147.0764</TableCell>
+                  <TableCell>147.07</TableCell>
                   <TableCell>519.09</TableCell>
                   <TableCell>120340</TableCell>
                   <TableCell>118902</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>85.0296</TableCell>
+                  <TableCell>85.02</TableCell>
                   <TableCell>89.22</TableCell>
                   <TableCell>468010</TableCell>
                   <TableCell>522398</TableCell>
@@ -663,9 +663,24 @@ function GuidePage() {
               </Box>
             ))}
           </Box>
-          <Typography variant="body1" color="text.secondary">
-            Adducts define which ion forms are tested during mass matching. Keep only adducts expected for your method.
-            m/z tolerance controls the mass window. The default 5e-6 equals 5 ppm. RT tolerance is used for RT-aware LC and GC matching. Shift corrects retention-time drift; use auto or enter a manual shift in seconds.
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            component="ul"
+            sx={{ pl: 3, m: 0 }}
+          >
+            <li>
+              Adducts define which ion forms are tested during mass matching. Keep only
+              adducts expected for your method.
+            </li>
+            <li>
+              Mass tolerance controls the m/z matching window. The default 5e-6 equals
+              5 ppm.
+            </li>
+            <li>
+              Retention-time tolerance is used for RT-aware LC and GC matching. Shift
+              corrects retention-time drift; use auto or enter a manual shift in seconds.
+            </li>
           </Typography>
         </Stack>
       </Paper>
