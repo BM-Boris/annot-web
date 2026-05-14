@@ -553,12 +553,12 @@ function GuidePage() {
   return (
     <Stack spacing={1.2}>
       <Paper sx={{ p: 3, maxWidth: 900, mx: "auto" }}>
-        <Stack spacing={1}>
-          <Typography variant="h5" fontWeight={700}>
-            Guide
+         <Stack spacing={1.25}>
+          <Typography variant="subtitle1" fontWeight={800}>
+            Annot
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            <b>ANNOT</b> takes a feature table from LC-MS or GC-MS and adds candidate compound annotations. 
+             takes a feature table from LC-MS or GC-MS and adds candidate compound annotations. 
             It gives the best hit and a candidate list, helping users decide what to confirm with retention time, fragmentation data, standards, or biological context.
           </Typography>
         </Stack>
@@ -667,8 +667,17 @@ function GuidePage() {
             variant="body1"
             color="text.secondary"
             component="ul"
-            sx={{ pl: 3, m: 0 }}
-          >
+            sx={{
+              pl: 3,
+              m: 0,
+              "& li": {
+                mb: 0.75,
+              },
+              "& li:last-child": {
+                mb: 0,
+              },
+            }}
+            >
             <li>
               Adducts define which ion forms are tested during mass matching. Keep only
               adducts expected for your method.
