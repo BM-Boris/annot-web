@@ -4,5 +4,6 @@ Single-page React + Material UI UI for annotating LC-MS / GC-MS tables. Columns 
 
 - Parses the uploaded file locally to list columns, detect separator, and pre-fill m/z/RT selects.
 - Lets the user choose LC/GC mode, tolerances, shifts, libraries including HMDB/T3DB, ion mode, and adducts.
+- Includes a `#guide` page with a compact workflow guide.
 - Sends a single request with the file + params to `API_URL`.
 - Shows status, a preview table, and a Download CSV button from either the returned link or blob.

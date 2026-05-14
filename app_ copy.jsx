@@ -527,27 +527,42 @@ function PreviewTable({ columns, rows }) {
 }
 
 function GuidePage() {
-  const workflow = [
-    "Upload table",
-    "Choose LC/GC",
-    "Select library",
-    "Set tolerances",
-    "Annotate",
-    "Download results",
-  ];
-  const libraryTips = [
-    ["Broad metabolite search", "HMDB"],
-    ["Toxicants and exposures", "T3DB"],
-    ["RT-aware LC matching", "Annot"],
-    ["GC feature groups", "GC mode"],
-  ];
-  const outputColumns = [
-    ["annotation", "Best matching compound name."],
-    ["adduct", "Ion form that explained the feature m/z."],
-    ["ppm_error", "Mass error for the best hit. 5e-6 tolerance equals 5 ppm."],
-    ["formula", "Chemical formula for the best hit."],
-    ["distance", "Matching score used for ranking hits."],
-    ["candidates", "All hits inside the tolerance."],
+  const sections = [
+    {
+      title: "Input table",
+      body:
+        "Upload a CSV, TSV, or TXT file. The m/z column is required in every mode. A time or RT column is required for GC and for the RT-aware Annot LC library. Sample intensity columns can stay in the file, but they are not used for matching.",
+    },
+    {
+      title: "LC mode",
+      body:
+        "Choose LC for LC-MS feature tables. HMDB and T3DB are mass-only LC searches: ANNOT compares your feature m/z to theoretical adduct m/z values. The Annot LC database is smaller and stricter because it also requires retention-time agreement.",
+    },
+    {
+      title: "GC mode",
+      body:
+        "Choose GC for GC-MS feature tables. GC matching uses m/z and retention time together. The tool also groups nearby peaks and prefers groups with anchor ions, which helps reduce isolated one-peak matches.",
+    },
+    {
+      title: "Library choice",
+      body:
+        "Use HMDB for a broad metabolite candidate search. Use T3DB when you care about toxicants, pollutants, or exposure-related compounds. Choose Annot when your input has reliable retention time and you want matches from the curated LC reference set.",
+    },
+    {
+      title: "Ion mode and adducts",
+      body:
+        "Ion mode controls which adducts are searched. Positive mode defaults to [M+H]+, [M+Na]+, [M+NH4]+, and [M+K]+. Negative mode defaults to [M-H]-, [M-2H]2-, and [M+Cl]-. Remove adducts that your method should not produce.",
+    },
+    {
+      title: "Tolerance settings",
+      body:
+        "m/z tolerance is relative. The default 5e-6 equals 5 ppm, so a 1.7 ppm error is a valid match. RT tolerance is used only when the selected mode uses retention time. Lower tolerances give fewer candidates; higher tolerances are more permissive.",
+    },
+    {
+      title: "Output columns",
+      body:
+        "annotation is the best hit. adduct explains which ion form matched the feature. ppm_error is the mass error for the best hit. formula is the matched chemical formula. distance is the matching score. candidates stores all hits inside the tolerance, not only the best one.",
+    },
   ];
 
   return (
@@ -558,143 +573,26 @@ function GuidePage() {
             Guide
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            ANNOT takes a feature table from LC-MS or GC-MS and adds candidate compound annotations. 
-            It gives the best hit and a candidate list, helping users decide what to confirm with retention time, fragmentation data, standards, or biological context.
+            ANNOT takes a feature table from LC-MS or GC-MS and adds candidate compound annotations.
+            It gives you the best hit and a
+            candidate list so you can decide what to confirm with retention time, MS/MS, standards,
+            or biological context.
           </Typography>
         </Stack>
       </Paper>
 
-      <Paper sx={{ p: 3, maxWidth: 900, mx: "auto" }}>
-        <Stack spacing={1.5}>
-          <Typography variant="subtitle1" fontWeight={800}>
-            Workflow
-          </Typography>
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: { xs: "1fr", sm: "repeat(3, 1fr)" },
-              gap: 1,
-            }}
-          >
-            {workflow.map((step, idx) => (
-              <Box
-                key={step}
-                sx={{
-                  p: 1.4,
-                  borderRadius: 2,
-                  border: "1px solid rgba(15,157,88,0.18)",
-                  backgroundColor: "rgba(15,157,88,0.06)",
-                }}
-              >
-                <Typography variant="body1" fontWeight={700}>
-                  {idx + 1})  {step}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-        </Stack>
-      </Paper>
-
-      <Paper sx={{ p: 3, maxWidth: 900, mx: "auto" }}>
-        <Stack spacing={1.5}>
-          <Typography variant="subtitle1" fontWeight={800}>
-            Input columns
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Every table needs m/z. GC and RT-aware LC also need retention time in seconds.
-          </Typography>
-          <Box sx={{ overflow: "auto" }}>
-            <Table size="small">
-              <TableHead>
-                <TableRow>
-                  {["mz", "rt", "sample_1", "sample_2"].map((col) => (
-                    <TableCell key={col} sx={{ fontWeight: 800 }}>
-                      {col}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCell>147.0764</TableCell>
-                  <TableCell>519.09</TableCell>
-                  <TableCell>120340</TableCell>
-                  <TableCell>118902</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>85.0296</TableCell>
-                  <TableCell>89.22</TableCell>
-                  <TableCell>468010</TableCell>
-                  <TableCell>522398</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Box>
-        </Stack>
-      </Paper>
-
-      <Paper sx={{ p: 3, maxWidth: 900, mx: "auto" }}>
-        <Stack spacing={1.5}>
-          <Typography variant="subtitle1" fontWeight={800}>
-            Choices
-          </Typography>
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
-              gap: 1,
-            }}
-          >
-            {libraryTips.map(([goal, choice]) => (
-              <Box
-                key={goal}
-                sx={{
-                  p: 1.4,
-                  borderRadius: 2,
-                  border: "1px solid rgba(255,255,255,0.10)",
-                }}
-              >
-                <Typography variant="body2" color="text.secondary">
-                  {goal}
-                </Typography>
-                <Typography variant="body1" fontWeight={800}>
-                  {choice}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-          <Typography variant="body1" color="text.secondary">
-            Adducts define which ion forms are tested during mass matching. Keep only adducts expected for your method.
-            m/z tolerance controls the mass window. The default 5e-6 equals 5 ppm. RT tolerance is used for RT-aware LC and GC matching. Shift corrects retention-time drift; use auto or enter a manual shift in seconds.
-          </Typography>
-        </Stack>
-      </Paper>
-
-      <Paper sx={{ p: 3, maxWidth: 900, mx: "auto" }}>
-        <Stack spacing={1.5}>
-          <Typography variant="subtitle1" fontWeight={800}>
-            Output columns
-          </Typography>
-          <Box sx={{ overflow: "auto" }}>
-            <Table size="small">
-              <TableHead>
-                <TableRow>
-                  <TableCell sx={{ fontWeight: 800 }}>column</TableCell>
-                  <TableCell sx={{ fontWeight: 800 }}>meaning</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {outputColumns.map(([column, meaning]) => (
-                  <TableRow key={column}>
-                    <TableCell sx={{ fontWeight: 700 }}>{column}</TableCell>
-                    <TableCell>{meaning}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Box>
-        </Stack>
-      </Paper>
+      {sections.map((section) => (
+        <Paper key={section.title} sx={{ p: 3, maxWidth: 900, mx: "auto" }}>
+          <Stack spacing={1}>
+            <Typography variant="subtitle1" fontWeight={800}>
+              {section.title}
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              {section.body}
+            </Typography>
+          </Stack>
+        </Paper>
+      ))}
     </Stack>
   );
 }
