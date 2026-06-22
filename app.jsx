@@ -971,7 +971,11 @@ function App() {
                     <Button
                       variant="contained"
                       color="primary"
-                      onClick={() => fileInputRef.current?.click()}
+                      onClick={() => {
+                        if (fileInputRef.current) {
+                          fileInputRef.current.click();
+                        }
+                      }}
                     >
                       Upload
                     </Button>
@@ -991,7 +995,7 @@ function App() {
                   accept=".csv,.tsv,.txt"
                   id="hidden-file-input"
                   hidden
-                  onChange={(e) => handleFile(e.target.files?.[0])}
+                  onChange={(e) => handleFile(e.target.files && e.target.files[0])}
                 />
 
                 <Typography variant="body2" color="text.secondary">
